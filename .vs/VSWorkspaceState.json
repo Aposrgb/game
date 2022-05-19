@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Assets",
+    "\\Assets\\Resources",
+    "\\Assets\\Towers",
+    "\\Assets\\Towers\\Scripts",
+    "\\Assets\\Towers\\Scripts\\Pathfinding",
+    "\\Assets\\Towers\\Sprite"
+  ],
+  "SelectedNode": "\\Assets\\Towers\\Scripts\\Pathfinding\\EnemyWalker.cs",
+  "PreviewInSolutionExplorer": false
+}
