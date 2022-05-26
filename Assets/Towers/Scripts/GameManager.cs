@@ -25,6 +25,11 @@ namespace TowerGame
         public GameObject LoseUI;
         public GameObject WinUI;
 
+        public GameObject resume;
+        public GameObject levels;
+        public GameObject menu;
+        public GameObject group;
+
         public GameObject BonusMoneyPrefab;
 
         public Text MoneyText;
@@ -244,6 +249,34 @@ namespace TowerGame
             CloseShop();
         }
 
+        public void StopMenu() 
+        {
+            this.PauseGame();
+            if (paused) {
+                PauseBtn.gameObject.SetActive(false);
+                BoostBtn.gameObject.SetActive(false);
+                group.transform.localPosition = new Vector3(0,0,0);
+            }
+            else { 
+                PauseBtn.gameObject.SetActive(true);
+                BoostBtn.gameObject.SetActive(true);
+                group.transform.localPosition = new Vector3(0,-1000,0);
+            }
+        }
 
+        void Start() { 
+            resume.GetComponent<Button>().onClick.AddListener(()=>{
+                    this.PauseGame();
+                    BoostBtn.gameObject.SetActive(true);
+                    PauseBtn.gameObject.SetActive(true);
+                    group.transform.localPosition = new Vector3(0,-1000,0);
+                });
+            levels.GetComponent<Button>().onClick.AddListener(()=>{
+                    SceneManager.LoadScene("Levels");
+                });
+            menu.GetComponent<Button>().onClick.AddListener(()=>{
+                    SceneManager.LoadScene("Menu");
+                });
+        }
     }
 }
